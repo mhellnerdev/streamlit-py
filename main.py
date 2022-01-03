@@ -1,0 +1,27 @@
+import streamlit as st
+import pandas
+
+data = {
+  'Series_1': [1,3,4,5,7],
+  'Series_2': [10, 30, 40, 100, 250],
+}
+
+
+df = pandas.DataFrame(data)
+
+
+st.title('StreamLit')
+st.subheader('Introducing StreamLit Library in Python')
+st.write('''
+
+This is streamlit.
+A python web framework
+
+''')
+st.write(df)
+
+st.line_chart(df)
+st.area_chart(df)
+
+myslider = st.slider('Celsius')
+st.write(myslider, 'in Fahrenheit is', myslider * 9/5 + 32)
